@@ -1,0 +1,159 @@
+/* src/components/Header/Header.css */
+
+/* ─── Base ─────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.header--sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ─── Variantes ────────────────────────────────────────────── */
+.header--default {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  color: #111827;
+}
+
+.header--dark {
+  background: #111827;
+  border-bottom: 1px solid #374151;
+  color: #f9fafb;
+}
+
+.header--transparent {
+  background: transparent;
+  border-bottom: none;
+  color: #ffffff;
+}
+
+.header--colored {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-bottom: none;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+}
+
+/* ─── Logo ─────────────────────────────────────────────────── */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.header__logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Nav ──────────────────────────────────────────────────── */
+.header__nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+
+.header__nav-link {
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.75;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.header__nav-link:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.header--dark .header__nav-link:hover,
+.header--transparent .header__nav-link:hover,
+.header--colored .header__nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header__nav-link--active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+/* ─── Actions ──────────────────────────────────────────────── */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.header__btn {
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+/* Ghost (Entrar) */
+.header__btn--ghost {
+  background: transparent;
+  color: inherit;
+  border: 1.5px solid transparent;
+}
+
+.header__btn--ghost:hover {
+  border-color: currentColor;
+}
+
+/* Primary (Cadastrar) */
+.header--default .header__btn--primary {
+  background: #6366f1;
+  color: #fff;
+}
+
+.header--default .header__btn--primary:hover {
+  background: #4f46e5;
+}
+
+.header--dark .header__btn--primary,
+.header--transparent .header__btn--primary,
+.header--colored .header__btn--primary {
+  background: #ffffff;
+  color: #6366f1;
+}
+
+.header--dark .header__btn--primary:hover,
+.header--transparent .header__btn--primary:hover,
+.header--colored .header__btn--primary:hover {
+  background: #e0e7ff;
+}
+
+/* Outline (Sair) */
+.header__btn--outline {
+  background: transparent;
+  color: inherit;
+  border: 1.5px solid currentColor;
+}
+
+.header__btn--outline:hover {
+  opacity: 0.75;
+}
